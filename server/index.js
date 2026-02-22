@@ -6,7 +6,8 @@ require('dotenv').config()
 const dbConnect = require('./Config/dbConnect')
 const PORT = process.env.PORT || 5000;
 
-app.use(express.json());
+app.use(express.json())
+app.use(express.urlencoded({ extended:true }))
 app.use(morgan('dev'))
 
 dbConnect();
